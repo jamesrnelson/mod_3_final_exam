@@ -6,13 +6,9 @@ describe WordValidation do
     expect(subject).to be_a WordValidation
   end
 
-  context 'instance methods' do
+  context 'instance methods', vcr: true do
     it '#word' do
-      expect(subject.word).to eq('foxes')
-    end
-
-    it '#root_form' do
-      expect(subject.root_form).to eq('fox')
+      expect(subject.word).to be_a Word
     end
   end
 end

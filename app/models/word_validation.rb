@@ -5,7 +5,14 @@ class WordValidation
   end
 
   def raw_search
+    check_response
     JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def check_response
+    if response.body.include?("<!")
+      "raise error"
+    end
   end
 
   def word
