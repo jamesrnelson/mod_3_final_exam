@@ -1,6 +1,5 @@
 class ValidationController < ApplicationController
   def index
-    binding.pry
-    @search = WordValidation.new(params[:search])
+    @search = WordValidation.new(params[:search]).word
   end
 end

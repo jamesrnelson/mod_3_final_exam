@@ -9,11 +9,7 @@ class WordValidation
   end
 
   def word
-    raw_search[:results].first[:id]
-  end
-
-  def root_form
-    raw_search[:results].first[:lexical_entries].first[:inflectionOf].first[:id]
+    Word.new(raw_search[:results].first)
   end
 
   def connection
