@@ -12,12 +12,12 @@ class Play < ApplicationRecord
     }
   end
 
-  private
 
     def score_word
       values = self.word.chars.map do |letter|
-        letter_scores[letter]
+        self.letter_scores[letter.upcase]
+        binding.pry
       end
-      values.sum
+      values.inject(:+)
     end
 end
