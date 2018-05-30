@@ -5,6 +5,16 @@ class WordValidation
   end
 
   def raw_search
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def word
+    raw_search[:results].first[:id]
+  end
+
+  def root_form
+    raw_search[:results].first[:lexical_entries].first[:inflectionOf].first[:id]
+  end
 
   def connection
     Faraday.new(url: "https://od-api.oxforddictionaries.com:443/api/v1/inflections/en/#{search}")

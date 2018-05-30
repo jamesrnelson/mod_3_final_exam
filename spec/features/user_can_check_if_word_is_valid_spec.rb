@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Guest User' do
   context 'visits root path and fills in word' do
-    it 'a valid word should be valid' do
+    it 'a valid word should be valid', vcr: true do
       visit root_path
       # As a guest user (no sign in necessary)
       # When I visit "/"
@@ -16,7 +16,7 @@ describe 'Guest User' do
 
     end
 
-    it 'an invalid word should be invalid' do
+    it 'an invalid word should be invalid', vcr: true do
       visit root_path
       # As a guest user
       # When I visit "/"
