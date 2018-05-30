@@ -4,6 +4,7 @@ describe 'api/v1/games/:id' do
   context 'user sends get request' do
     it 'should receive the appropriate response' do
 
+      game = Game.create()
       get '/api/v1/games/1'
 
       expect(response).to be_success

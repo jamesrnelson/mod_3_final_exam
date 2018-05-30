@@ -4,9 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      namespace :games do
-        
-      end
+      get '/games/:id', to: 'games#show'
     end
   end
 end
