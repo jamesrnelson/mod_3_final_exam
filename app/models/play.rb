@@ -15,5 +15,9 @@ class Play < ApplicationRecord
   private
 
     def score_word
+      values = self.word.chars.map do |letter|
+        letter_scores[letter]
+      end
+      values.sum
     end
 end
